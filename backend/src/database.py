@@ -19,10 +19,10 @@ async def get_connection():
     """
     conn = await psycopg.AsyncConnection.connect(DATABASE_URL)
     try:
-        async with conn.transaction(): # This is the transaction context
+        async with conn.transaction(): 
             async with conn.cursor() as cursor:
-                yield cursor  # Yield cursor as the context manager resource
+                yield cursor  
     except Exception as e:
         raise e
     finally:
-        await conn.close()  # Make sure to close the connection when done
+        await conn.close()  
