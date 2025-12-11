@@ -60,4 +60,17 @@ unicorn main:app --reload
 ```
 -> open unicorn running on http://127.0.0.1:8000  and in the link on the web add /docs as http://127.0.0.1:8000/docs and you will see the fastapi swagger endpoints
 
+5. Run database in docker (install docker fist on your machine if you dont have it, and you can install docker desktop too to see the containers)
+```bash
+docker compose up -d 
+```
+- with this you can see all the running containers
+```bash
+docker ps
+```
+- run migrations (this will create the initial table with id, location and object)
 
+```bash
+python backend/migrations/migration.py
+
+```
